@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        Persuasive or Deceptive Visualization?
+      </h1>
+    </header>
+
+    <main>
+      <h2>Proposition: Blue states allocate exceedingly large budgets for abortions to a young demographic.</h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="images/prop.png" alt="Proposition" />
+          <figcaption>FOR: Democratic states fund teen abortions an absurd amount.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>SLANTED TEXT: All titles and annotations are written to nudge the viewer towards the proposition. While the title is extreme, the description and annotations to the plots use subtle yet suggestive language, e.g. "Which states... to this young demographic?" This scores -1.</li>
+          <li>COLOR ENCODING: To be consistent with U.S. politics, Republican states are encoded red and Democratics are encoded blue. These specific encodings receive a 2. For the "other 40 states" featured in the bubble chart is subtly blue, so that the blue overwhelms the red encodings on the page. This itself scores -2.</li>
+          <li>BUBBLE CHART REMOVED GRIDLINES AND SIZING: For the bubble chart, I opted to remove any gridlines so that I can inflate the areas of the bubbles. Since the percents themselves are accurate—and majority are below 1%—California's and New York's disproportionate sizing isn't as quickly recognized. This scores -1.5.</li>
+          <li>BUBBLE CHART POSITIONING: In Photoshop, I adjusted the gap between the bubbles, pushing the largest bubbles together to appear larger. This scores a -2.</li>
+          <li>WAFFLE CHART FOR EMPHASIS: This chart was included for narrative/rhetorical reasons. The numbers are completely accurate but are only included to reinforce the proposition. This scores a 0.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="images/cprop.png" alt="Counter Proposition" />
+          <figcaption>AGAINST: Red states allocate disproportionately small budgets to abortion heatlhcare altogether.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>SLANTED TEXT: Like FOR the proposition, the titles and annotations are slanted to nudge the viewer towards the (counter)propositon. This scores a -1.5.</li>
+          <li>COLOR ENCODING: This visualization features the same color encodings as the previous visualization, however the blue data are less saturated as to shift focus onto the red data points. This scores a -0.5.</li>
+          <li>REMOVAL OF GRIDLINES: Since I added the medians, the plot felt cluttered. I only removed the gridlines to improve the visibility and clarity of the plot. This scores a 0.5 (maybe 0).</li>
+          <li>ADDITION OF MEDIANS: So that this visualization was not only a scatter plot, I opted to add the medians for both variables. This allows the viewer to effectively determine where red (and blue) data typically are. Scoring a 0.</li>
+          <li>LABELING ONLY RED STATES: Since this proposition focuses on Republican states, I only labelled the red data points so that the viewer can locate specific states. This scores a -0.5.</li>
+          <li>QUADRANT MARKING: The fourth quadrant, low-spenders and states highly lacking in providers, is colored red to draw attention. This serves to highlight that (coincidentally) only red states fall into this quadrant. This is a 0.</li>
+          <li>LOG SCALED Y-AXIS: The data for California and New York plot outliers. Rather than removing them, I log scaled the y-axis for improved visibility of the data. I mention it in the plot labels. This scores a 2.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
+      </section>
+    </main>
+  </body>
+</html>
